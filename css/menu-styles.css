@@ -1,0 +1,59 @@
+/**
+color pallete
+#FAF3E0 - milky
+#EABF9F - latte
+#B68973 - espresso
+#1E212D - cafe americano
+*/
+li {
+    list-style-type: none;
+}
+section {
+    background-color: #B68973;
+    color: #FAF3E0;
+}
+
+/** header & nav bar
+---------------------------------- */
+.intro-header {
+    padding: 0;
+}
+
+/** info 
+------------------------------ */
+.info {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.info-wrap {
+    text-align: center;  
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.cuisine-items {
+    background-color: #EABF9F;
+    margin: 15px 0;
+    text-align: center;
+    font-weight: 500;
+    border-radius: 7%;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1), 0 6px 20px 0 rgba(0,0,0,0.15);
+}
+
+.cuisine-items a {
+    color: #1E212D;
+}
+
+.facilities-list {
+    padding-top: 35px;
+}
+
+.facility-item h3{
+    font-weight: 500;
+}

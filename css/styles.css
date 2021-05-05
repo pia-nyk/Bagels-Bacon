@@ -1,0 +1,238 @@
+/**
+color pallete
+#FAF3E0 - milky
+#EABF9F - latte
+#B68973 - espresso
+#1E212D - cafe americano
+*/
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    line-height: 2;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-family: 'Caveat', cursive;
+    font-size: 50px;
+    line-height: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    padding: 60px 0;
+}
+
+.main-img {
+    background-size:contain;
+}
+
+/** intro 
+--------------------------------------------- */
+.intro-header {
+    padding-top: 0;
+    position: relative;
+}
+.intro-header a {
+    position: absolute;
+    left: 40%;
+    margin-top: 5%;
+    border-radius: 5%;
+    padding: 10px 20px;
+    background-color: #FAF3E0; 
+    color: #1E212D;
+}
+
+.intro-header a:hover {
+    background-color: #EEE8D7;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.intro-content {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #faf3e0;
+}
+.intro-text {
+    text-align: center;
+}
+
+.intro-text h1 {
+    font-size: 100px;
+    font-weight: bolder;
+}
+.para-bigger {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 1000;
+}
+
+/** about 
+--------------------------------------------- */
+.main-head-wrap {
+    text-align: center;
+}
+
+.about {
+    padding-top: 0%;
+    width: 80%;
+    margin: 0 auto;
+}
+
+/** products 
+--------------------------------------------- */
+
+.products {
+    margin: 0 auto;
+    padding-top: 2%;
+    background-color: #B68973;
+    color: #faf3e0;
+}
+
+.products-heading {
+    text-align: center;
+    margin: 80px 0 50px;
+}
+.collection-wrap {
+    align-content: center;
+    width: 40%;
+    margin: 0 auto;
+}
+.collection-item {
+    position: relative;
+    padding-bottom: 30px;
+}
+.prod-img-wrap {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1), 0 6px 20px 0 rgba(0,0,0,0.15);
+}
+.prod-desc {
+    position: absolute;
+    top: 40%;
+    left: 45%;
+    transform: translate(-40%, -45%);
+    line-height: 1.25;
+    font-size: 15px;
+    padding: 2px 10px;
+    background: rgba(30, 33, 45, 70%);
+    color: #EABF9F;
+}
+
+
+/** newsletter 
+--------------------------------------------- */
+.newsletter {
+    height: inherit;
+    background-color: #EABF9F;
+    color: #1E212D;
+    text-align: center;
+}
+
+input {
+    padding: 10px 20px;
+    width: 30%;
+    border: 1px solid #ccc;
+    border-radius: 5%;
+    box-sizing: border-box;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1), 0 6px 20px 0 rgba(0,0,0,0.15);
+    margin-right: 2%;
+    margin-bottom: 3%;
+}
+
+.subscribe-form a {
+    padding: 10px 20px;
+    border-radius: 5%;
+    background-color: #1E212D; 
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1), 0 6px 20px 0 rgba(0,0,0,0.15);
+    color: #FAF3E0;
+}
+
+.subscribe-form a:hover {
+    background-color: #000000;
+}
+
+.newsletter > p:first-of-type {
+    padding-bottom: 15px;
+}
+
+  
+
+/** footer 
+--------------------------------------------- */
+footer {
+    text-align: center;
+    background-color: #1E212D;
+    color: #FAF3E0;
+}
+.footer-items {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+.footer-items a {
+    text-decoration: underline;
+    padding-right: 30px;
+    display: inline-block;
+    color: #EABF9F;
+}
+.footer-items a:hover {
+    text-decoration: none;
+}
+
+/** reponsive media queries
+--------------------------------------- */
+@media screen and (min-width:1050px) {
+    .main-para-wrap {
+        display: flex;
+    }
+    .para-light {
+        margin-right: 2%;
+    }
+    .collection-wrap {
+        display: flex;
+        justify-content: center;
+        width: 80%;
+    }
+    .collection-item {
+        padding-right: 10px;
+        flex: 0 0 300px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    body {
+        font-size: 10px;
+    }
+    h1 {
+        font-size: 30px;
+    }
+    .collection-wrap {
+        width: 80%;
+    }
+    .prod-desc {
+        font-size: 10px;
+    }
+    .newsletter-content {
+        margin: 0 auto;
+        width: 80%;
+    }
+    input {
+        width: 80%;
+        margin-bottom: 10%;
+    }
+}
+
+@media screen and (max-width:1077px) {
+    .intro-text h1 {
+        font-size: 60px;
+    }
+    .para-bigger {
+        font-size: 0;
+    }
+}
