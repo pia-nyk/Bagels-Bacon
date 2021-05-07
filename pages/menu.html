@@ -4,184 +4,217 @@
         <title>Bagels & Bacon</title>
         <meta name="viewport"
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/menu-styles.css">
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <link rel="stylesheet" href="../static/css/menu-styles.css">
     <link href="https://fonts.googleapis.com/css?family=Caveat|Montserrat:400,600&display=swap" rel="stylesheet">
+    <script src="../static/js/main.js"></script>
     </head>
     <body>
-        <header>
-            <div class="container intro-header">
-                <img class="main-img" src="../images/new-background.jpg" alt="Restaurant Background" width="100%" height="100%">
-                <div class="intro-content">
-                    <div class="intro-text">
-                        <h1 class="heading-jumbo">Bagels & Bacon</h1>
-                        <h2 class="para-bigger">Get ready to satiate your tastebuds</h2>
+        <section id="main-body" class="body-item main-body">
+            <header>
+                <div class="container intro-header">
+                    <img class="main-img" src="../images/new-background.jpg" alt="Restaurant Background" width="100%" height="100%">
+                    <div class="intro-content">
+                        <div class="intro-text">
+                            <h1 class="heading-jumbo">Bagels & Bacon</h1>
+                            <h2 class="para-bigger">Get ready to satiate your tastebuds</h2>
+                        </div>
+                        <a href="#form-section" onclick="displayForm();">Order Now</a>
                     </div>
-                    <a href="#">Order Now</a>
                 </div>
-            </div>
-        </header>
-        <div class="container info">
-            <div class="info-wrap">
-                <h1>What we offer</h1>
-                <p>Pleasant dining experience for all moods</p>
-            </div>
-            <hr/>
-            <div class="flex-container">
-                <div class="cuisines flex-items">
-                    <h3>Cuisines Available</h3>
-                    <ul class="cuisine-list">
-                        <li class="cuisine-items"><a href="#">Cafe</a></li>
-                        <li class="cuisine-items"><a href="#">American</a></li>
-                        <li class="cuisine-items"><a href="#">Burger</a></li>
-                        <li class="cuisine-items"><a href="#">Beverage</a></li>
-                        <li class="cuisine-items"><a href="#">Dessert</a></li>
-                    </ul>
-                </div>
-                <div class="more-info flex-items">
-                    <ul class="facilities-list">
-                        <li class="facility-item">
-                         <p><b><span>&#10003;</span></b>Breakfast</p>
-                        </li>
-                        <li class="facility-item">
-                            <p><b><span>&#10003;</span></b>Seating</p>
-                        </li>
-                        <li class="facility-item">
-                            <p><b><span>&#10003;</span></b>Pet Friendly</p>
-                        </li>
-                        <li class="facility-item">
-                            <p><b><span>&#10003;</span></b>Home Delivery</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <section class="menu-section">
-
-            <div class="container menu">
-                <div class="menu-heading">
-                    <h1>Menu Items</h1>
-                    <p>Check out our worldclass menu items</p>
+            </header>
+            <div class="container info">
+                <div class="info-wrap">
+                    <h1>What we offer</h1>
+                    <p>Pleasant dining experience for all moods</p>
                 </div>
                 <hr/>
-                <ul class="menu-item-list">
-                    <li class="menu-item">
-                        <img src="../images/waffles.png" alt="Dessert" width="200px" height="200px">
-                        <div class="item-desc">
-                            <a href="#"><p>Waffles</p></a>
-                            <h4>$1.99</h4>
-                        </div>
-                    </li>
-                    <li class="menu-item">
-                        <img src="../images/pancakes.png" alt="Dessert" width="200px" height="200px">
-                        <div class="item-desc">
-                            <a href="#"><p>Chocolate Pancakes</p></a>
-                            <h4>$2.45</h4>
-                        </div>
-                    </li>
-                    <li class="menu-item">
-                        <img src="../images/burger.png" alt="American" width="200px" height="200px">
-                        <div class="item-desc">
-                            <a href="#"><p>Burger</p></a>
-                            <h4>$2.00</h4>
-                        </div>
-                    </li>
-                    <li class="menu-item">
-                        <img src="../images/french-toast.jpg" alt="Toast" width="200px" height="200px">
-                        <div class="item-desc">
-                            <a href="#"><p>French Toast</p></a>
-                            <h4>$1.89</h4>
-                        </div>
-                    </li>
-                    <li class="menu-item">
-                        <img src="../images/sub.png" alt="Wrap" width="200px" height="200px">
-                        <div class="item-desc">
-                            <a href="#"><p>Vegetable Sub</p></a>
-                            <h4>$2.67</h4>
-                        </div>
-                    </li>
-                    <li class="menu-item">
-                        <img src="../images/eggs.png" alt="Eggs" width="200px" height="200px">
-                        <div class="item-desc">
-                            <a href="#"><p>Eggs & More</p></a>
-                            <h4>$2.67</h4>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            </section>
-
-            <section class="reviews-section">
-                <div class="review-form flex-item">
-                    <div class="feedback-heading">
-                        <h1>Let us Know</h1>
+                <div class="flex-container">
+                    <div class="cuisines flex-items">
+                        <h3>Cuisines Available</h3>
+                        <ul class="cuisine-list">
+                            <li class="cuisine-items"><a href="#">Cafe</a></li>
+                            <li class="cuisine-items"><a href="#">American</a></li>
+                            <li class="cuisine-items"><a href="#">Burger</a></li>
+                            <li class="cuisine-items"><a href="#">Beverage</a></li>
+                            <li class="cuisine-items"><a href="#">Dessert</a></li>
+                        </ul>
                     </div>
-                    <form action="">
-                        <label for="name">Name:</label><br>
-                        <input type="text" id="name" name="name"><br>
-                        <label for="head">Title:</label><br>
-                        <input type="text" id="head" name="head"><br>
-                        <label for="enquiry">Enquiry:</label><br/>
-                        <textarea id="enquiry-text" name="enquiry-text" rows="4"></textarea><br/>
-                        <input type="submit" value="Submit">
-                    </form>
+                    <div class="more-info flex-items">
+                        <ul class="facilities-list">
+                            <li class="facility-item">
+                             <p><b><span>&#10003;</span></b>Breakfast</p>
+                            </li>
+                            <li class="facility-item">
+                                <p><b><span>&#10003;</span></b>Seating</p>
+                            </li>
+                            <li class="facility-item">
+                                <p><b><span>&#10003;</span></b>Pet Friendly</p>
+                            </li>
+                            <li class="facility-item">
+                                <p><b><span>&#10003;</span></b>Home Delivery</p>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="container reviews flex-item">
-                    <div class="reviews-heading">
-                        <h1>Our Customers say...</h1>
+            </div>
+            <section class="menu-section">
+    
+                <div class="container menu">
+                    <div class="menu-heading">
+                        <h1>Menu Items</h1>
+                        <p>Check out our worldclass menu items</p>
                     </div>
-                    <ul class="review-items-list">
-                        <li class="review-items">
-                            <h3>Poster Name</h3>
-                            <h4>Title here</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                    <hr/>
+                    <ul class="menu-item-list">
+                        <li class="menu-item">
+                            <img src="../images/waffles.png" alt="Dessert" width="200px" height="200px">
+                            <div class="item-desc">
+                                <a href="#"><p>Waffles</p></a>
+                                <h4>$1.99</h4>
+                            </div>
                         </li>
-                        <li class="review-items">
-                            <h3>Poster Name</h3>
-                            <h4>Title here</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                        <li class="menu-item">
+                            <img src="../images/pancakes.png" alt="Dessert" width="200px" height="200px">
+                            <div class="item-desc">
+                                <a href="#"><p>Chocolate Pancakes</p></a>
+                                <h4>$2.45</h4>
+                            </div>
                         </li>
-                        <li class="review-items">
-                            <h3>Poster Name</h3>
-                            <h4>Title here</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-                                dolore magna aliqua.</p>
+                        <li class="menu-item">
+                            <img src="../images/burger.png" alt="American" width="200px" height="200px">
+                            <div class="item-desc">
+                                <a href="#"><p>Burger</p></a>
+                                <h4>$2.00</h4>
+                            </div>
+                        </li>
+                        <li class="menu-item">
+                            <img src="../images/french-toast.jpg" alt="Toast" width="200px" height="200px">
+                            <div class="item-desc">
+                                <a href="#"><p>French Toast</p></a>
+                                <h4>$1.89</h4>
+                            </div>
+                        </li>
+                        <li class="menu-item">
+                            <img src="../images/sub.png" alt="Wrap" width="200px" height="200px">
+                            <div class="item-desc">
+                                <a href="#"><p>Vegetable Sub</p></a>
+                                <h4>$2.67</h4>
+                            </div>
+                        </li>
+                        <li class="menu-item">
+                            <img src="../images/eggs.png" alt="Eggs" width="200px" height="200px">
+                            <div class="item-desc">
+                                <a href="#"><p>Eggs & More</p></a>
+                                <h4>$2.67</h4>
+                            </div>
                         </li>
                     </ul>
-                    <a href="#" class="all-reviews"> See all reviews &#8594;</a>
                 </div>
-
-            <!-- <div class="container photos">
-                <ul class="photo-items-list">
-                    <li class="photo-items">
-                        <img src="../images/burger.png" alt="food photo" width="100px" height="100px">
-                    </li>
-                    <li class="photo-items">
-                        <img src="../images/desert.png" alt="food photo" width="100px" height="100px">
-                    </li>
-                    <li class="photo-items">
-                        <img src="../images/eggs.png" alt="food photo" width="100px" height="100px">
-                    </li>
-                    <li class="photo-items">
-                        <img src="../images/pasta.png" alt="food photo" width="100px" height="100px">
-                    </li>
-                    <li class="photo-items">
-                        <img src="../images/sub.png" alt="food photo" width="100px" height="100px">
-                    </li>
-                    <li class="photo-items">
-                        <img src="../images/waffles.png" alt="food photo" width="100px" height="100px">
-                    </li>
+                </section>
+    
+                <section class="reviews-section">
+                    <div class="review-form flex-item">
+                        <div class="feedback-heading">
+                            <h1>Let us Know</h1>
+                        </div>
+                        <form action="">
+                            <label for="name">Name:</label><br>
+                            <input type="text" id="name" name="name"><br>
+                            <label for="head">Title:</label><br>
+                            <input type="text" id="head" name="head"><br>
+                            <label for="enquiry">Enquiry:</label><br/>
+                            <textarea id="enquiry-text" name="enquiry-text" rows="4"></textarea><br/>
+                            <input type="submit" value="Submit">
+                        </form>
+                    </div>
+                    <div class="container reviews flex-item">
+                        <div class="reviews-heading">
+                            <h1>Our Customers say...</h1>
+                        </div>
+                        <ul class="review-items-list">
+                            <li class="review-items">
+                                <h3>Poster Name</h3>
+                                <h4>Title here</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                            </li>
+                            <li class="review-items">
+                                <h3>Poster Name</h3>
+                                <h4>Title here</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                            </li>
+                            <li class="review-items">
+                                <h3>Poster Name</h3>
+                                <h4>Title here</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+                                    dolore magna aliqua.</p>
+                            </li>
+                        </ul>
+                        <a href="#" class="all-reviews"> See all reviews &#8594;</a>
+                    </div>
+            </section>
+            <footer class="container">
+                <h1>Follow Us</h1>
+                <ul class="footer-items">
+                    <li><a href="#">bagels@gmail.com</a></li>
+                    <li><a href="#">facebook</a></li>
+                    <li><a href="#">instagram</a></li>
                 </ul>
-            </div> -->
-
+            </footer>
         </section>
-        <footer class="container">
-            <h1>Follow Us</h1>
-            <ul class="footer-items">
-                <li><a href="#">bagels@gmail.com</a></li>
-                <li><a href="#">facebook</a></li>
-                <li><a href="#">instagram</a></li>
-            </ul>
-        </footer>
+        <section class="body-item" id="form-section">
+            <div class="overlay-box">
+                <div class="overlay-box-links">
+                    <a href="#form-section" onclick="toggleForm('sign-up');" class="sign-up">Sign Up</a>
+                    <a href="#form-section" onclick="toggleForm('login');" class="login">Login</a>
+                    <a href="#main-body" onclick="closeForm();" class="cancel"><b>X</b></a>
+                </div>
+                <div class="signup-box">
+                    <div class="signup-header">
+                        <h1>Sign Up</h1>
+                    </div>
+                    <form class="signup-form">
+                        <div class="signup-form-items fname">
+                            <label for="fname">First Name:</label><br/>
+                            <input type="text" id="fname" name="fname"><br>
+                        </div>
+                        <div class="signup-form-items lname">
+                            <label for="lname">Last Name:</label><br/>
+                            <input type="text" id="lname" name="lname"><br>
+                        </div>
+                        <div class="signup-form-items mobile">
+                            <label for="mobile">Mobile Number:</label><br/>
+                            <input type="text" id="mobile" name="mobile"><br>
+                        </div>
+                        <div class="signup-form-items email">
+                            <label for="email">Email Id:</label><br/>
+                            <input type="text" id="email" name="email"><br>
+                        </div>
+                        <div class="signup-form-items submit">
+                            <input type="submit" value="Submit">
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="login-box">
+                    <div class="login-header">
+                        <h1>Login</h1>
+                    </div>
+                    <form class="login-form">
+                        <div class="login-form-items mobile">
+                            <label for="mobile">Mobile Number:</label><br/>
+                            <input type="text" id="mobile" name="mobile"><br>
+                        </div>
+                        <div class="login-form-items lname">
+                            <label for="password">Password:</label><br/>
+                            <input type="text" id="password" name="password"><br>
+                        </div>
+                        <div class="login-form-items submit">
+                            <input type="submit" value="Submit">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
     </body>
 </html>

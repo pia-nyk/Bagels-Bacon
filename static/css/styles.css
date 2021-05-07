@@ -38,6 +38,7 @@ a {
 .intro-header {
     padding-top: 0;
     position: relative;
+    width: 100%;
 }
 .intro-header a {
     position: absolute;
@@ -55,9 +56,8 @@ a {
 }
 .intro-content {
     position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 35%;
+    left: 32%;
     color: #faf3e0;
 }
 .intro-text {
