@@ -8,6 +8,7 @@ color pallete
 
 body {
     position: relative;
+    z-index: 1;
 }
 .body-item {
     position: absolute;
@@ -23,6 +24,11 @@ li {
 ---------------------------------- */
 .intro-header {
     padding: 0;
+}
+.loginform-link, .explore {
+    padding: 10px 20px;
+    border-radius: 5%;
+    margin-left: 45%;
 }
 
 /** info 
@@ -192,6 +198,8 @@ li {
     margin: 0 auto;
     width: 50%;
     background-color: #FAF3E0;
+    border: 1px solid #B68973;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1), 0 6px 20px 0 rgba(0,0,0,0.15);
 }
 .overlay-box-links {
     display: grid;
@@ -210,7 +218,7 @@ li {
 }
 .overlay-box-links .login {
     border: 2px solid #B68973;
-    border-top: 0;
+    border-top: 0
 }
 .signup-box {
     text-align: center;
@@ -266,7 +274,6 @@ li {
         margin: 0 auto;
     }
     
-    
 }
 
 @media screen and (max-width:750px) {
@@ -293,6 +300,12 @@ li {
         width: 80%;
         background-color: #FAF3E0;
     
+    }
+}
+
+@media screen and (max-width:700px) {
+    .loginform-link, .explore {
+        margin-left: 40%;
     }
 }
 

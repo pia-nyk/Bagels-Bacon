@@ -6,20 +6,24 @@
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="../static/css/styles.css">
     <link rel="stylesheet" href="../static/css/menu-styles.css">
+    <link rel="stylesheet" href="../static/css/menu-options.css">
     <link href="https://fonts.googleapis.com/css?family=Caveat|Montserrat:400,600&display=swap" rel="stylesheet">
-    <script src="../static/js/main.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../static/js/loggedinpage.js"></script>
     </head>
     <body>
-        <section id="main-body" class="body-item main-body">
+        <section id="main-body" class="body-item main-body" onclick="closeSuccessBox();">
             <header>
                 <div class="container intro-header">
                     <img class="main-img" src="../images/new-background.jpg" alt="Restaurant Background" width="100%" height="100%">
-                    <div class="intro-content">
-                        <div class="intro-text">
+                    <div class="intro-content menu-option-grid">
+                        <a title="Menu" href="#" class="a-items menu-option-grid-item bars"><i class="fa fa-bars"></i></a>
+                        <div class="intro-text menu-option-grid-item">
                             <h1 class="heading-jumbo">Bagels & Bacon</h1>
                             <!-- <h2 class="para-bigger">Get ready to satiate your tastebuds</h2> -->
                         </div>
-                        <a href="#form-section" onclick="displayForm();" class="loginform-link">Order Now</a>
+                        <a title="Cart" href="#order-summary-overlay" onclick="showOrderSummaryBox();" class="a-items menu-option-grid-item"><i class="fa fa-cart-arrow-down"></i></a>
+                        <a title="Logout" href="#" class="a-items menu-option-grid-item"><i class="fa fa-sign-out"></i></a>
                     </div>
                 </div>
             </header>
@@ -68,44 +72,62 @@
                     <hr/>
                     <ul class="menu-item-list">
                         <li class="menu-item">
-                            <img src="../images/waffles.png" alt="Dessert" width="200px" height="200px">
+                            <div class="menu-item-overlay">
+                                <img onmouseover="showAddButton(this.id, 'menu-item-button-1');" onmouseout="hideAddButton(this.id, 'menu-item-button-1');" src="../images/waffles.png" alt="Dessert" width="200px" height="200px" id="menu-item-img-1">
+                                <a href="#" onmouseover="showAddButton('menu-item-img-1', 'menu-item-button-1');" class="menu-item-button" id="menu-item-button-1">Add</a>
+                            </div>
                             <div class="item-desc">
-                                <a href="#"><p>Waffles</p></a>
+                                <p>Waffles</p>
                                 <h4>$1.99</h4>
                             </div>
                         </li>
                         <li class="menu-item">
-                            <img src="../images/pancakes.png" alt="Dessert" width="200px" height="200px">
+                            <div class="menu-item-overlay">
+                                <img onmouseover="showAddButton(this.id, 'menu-item-button-2');" onmouseout="hideAddButton(this.id, 'menu-item-button-2');" src="../images/pancakes.png" alt="Dessert" width="200px" height="200px" id="menu-item-img-2">
+                                <a href="#" onmouseover="showAddButton('menu-item-img-2', 'menu-item-button-2');" class="menu-item-button" id="menu-item-button-2">Add</a>
+                            </div>
                             <div class="item-desc">
-                                <a href="#"><p>Chocolate Pancakes</p></a>
+                                <p>Chocolate Pancakes</p>
                                 <h4>$2.45</h4>
                             </div>
                         </li>
                         <li class="menu-item">
-                            <img src="../images/burger.png" alt="American" width="200px" height="200px">
+                            <div class="menu-item-overlay">
+                                <img onmouseover="showAddButton(this.id, 'menu-item-button-3');" onmouseout="hideAddButton(this.id, 'menu-item-button-3');" src="../images/burger.png" alt="American" width="200px" height="200px" id="menu-item-img-3">
+                                <a href="#" onmouseover="showAddButton('menu-item-img-3', 'menu-item-button-3');" class="menu-item-button" id="menu-item-button-3">Add</a>
+                            </div>
                             <div class="item-desc">
-                                <a href="#"><p>Burger</p></a>
+                                <p>Burger</p>
                                 <h4>$2.00</h4>
                             </div>
                         </li>
                         <li class="menu-item">
-                            <img src="../images/french-toast.jpg" alt="Toast" width="200px" height="200px">
+                            <div class="menu-item-overlay">
+                                <img onmouseover="showAddButton(this.id, 'menu-item-button-4');" onmouseout="hideAddButton(this.id, 'menu-item-button-4');" src="../images/french-toast.jpg" alt="Toast" width="200px" height="200px" id="menu-item-img-4">
+                                <a href="#" onmouseover="showAddButton('menu-item-img-4', 'menu-item-button-4');" class="menu-item-button" id="menu-item-button-4">Add</a>
+                            </div>
                             <div class="item-desc">
-                                <a href="#"><p>French Toast</p></a>
+                                <p>French Toast</p>
                                 <h4>$1.89</h4>
                             </div>
                         </li>
                         <li class="menu-item">
-                            <img src="../images/sub.png" alt="Wrap" width="200px" height="200px">
+                            <div class="menu-item-overlay">
+                                <img onmouseover="showAddButton(this.id, 'menu-item-button-5');" onmouseout="hideAddButton(this.id, 'menu-item-button-5');" src="../images/sub.png" alt="Wrap" width="200px" height="200px" id="menu-item-img-5">
+                                <a href="#" onmouseover="showAddButton('menu-item-img-5', 'menu-item-button-5');" class="menu-item-button" id="menu-item-button-5">Add</a>
+                            </div>
                             <div class="item-desc">
-                                <a href="#"><p>Vegetable Sub</p></a>
+                                <p>Vegetable Sub</p>
                                 <h4>$2.67</h4>
                             </div>
                         </li>
                         <li class="menu-item">
-                            <img src="../images/eggs.png" alt="Eggs" width="200px" height="200px">
+                            <div class="menu-item-overlay">
+                                <img onmouseover="showAddButton(this.id, 'menu-item-button-6');" onmouseout="hideAddButton(this.id, 'menu-item-button-6');" src="../images/eggs.png" alt="Eggs" width="200px" height="200px" id="menu-item-img-6">
+                                <a href="#" onmouseover="showAddButton('menu-item-img-6', 'menu-item-button-6');" class="menu-item-button" id="menu-item-button-6">Add</a>
+                            </div>
                             <div class="item-desc">
-                                <a href="#"><p>Eggs & More</p></a>
+                                <p>Eggs & More</p>
                                 <h4>$2.67</h4>
                             </div>
                         </li>
@@ -162,57 +184,54 @@
                 </ul>
             </footer>
         </section>
-        <section class="body-item" id="form-section">
-            <div class="overlay-box">
-                <div class="overlay-box-links">
-                    <a href="#form-section" onclick="toggleForm('sign-up');" class="sign-up">Sign Up</a>
-                    <a href="#form-section" onclick="toggleForm('login');" class="login">Login</a>
-                    <a href="#main-body" onclick="closeForm();" class="cancel"><b>X</b></a>
+        <section id="order-summary-overlay" class="body-item order-summary-overlay">
+            <div class="order-summary-box">
+                <div class="logo-header">
+                    <h1>Bagels & Bacon</h1>
                 </div>
-                <div class="signup-box">
-                    <div class="signup-header">
-                        <h1>Sign Up</h1>
+                <hr/>
+                <div class="order-summary">
+                    <h3>Your order summary</h2>
+                    <ul class="order-list">
+                        <li class="order-items">
+                            <div class="order-item">
+                                <p>Item Name x 2</p>
+                                <h4>$4.99</h4>
+                            </div>
+                        </li>
+                        <li class="order-items">
+                            <div class="order-item">
+                                <p>Item Name x 2</p>
+                                <h4>$4.99</h4>
+                            </div>
+                        </li>
+                        <li class="order-items">
+                            <div class="order-item">
+                                <p>Item Name x 2</p>
+                                <h4>$4.99</h4>
+                            </div>
+                        </li>
+                    </ul>
+                    <hr/>
+                    <div class="order-total">
+                        <p> Total </p>
+                        <h4>$20.99</h4>
                     </div>
-                    <form class="signup-form">
-                        <div class="signup-form-items fname">
-                            <label for="fname">First Name:</label><br/>
-                            <input type="text" id="fname" name="fname"><br>
-                        </div>
-                        <div class="signup-form-items lname">
-                            <label for="lname">Last Name:</label><br/>
-                            <input type="text" id="lname" name="lname"><br>
-                        </div>
-                        <div class="signup-form-items mobile">
-                            <label for="mobile">Mobile Number:</label><br/>
-                            <input type="text" id="mobile" name="mobile"><br>
-                        </div>
-                        <div class="signup-form-items email">
-                            <label for="email">Email Id:</label><br/>
-                            <input type="text" id="email" name="email"><br>
-                        </div>
-                        <div class="signup-form-items submit">
-                            <input type="submit" value="Submit">
-                        </div>
-                    </form>
                 </div>
-                
-                <div class="login-box">
-                    <div class="login-header">
-                        <h1>Login</h1>
-                    </div>
-                    <form class="login-form">
-                        <div class="login-form-items mobile">
-                            <label for="mobile">Mobile Number:</label><br/>
-                            <input type="text" id="mobile" name="mobile"><br>
-                        </div>
-                        <div class="login-form-items lname">
-                            <label for="password">Password:</label><br/>
-                            <input type="text" id="password" name="password"><br>
-                        </div>
-                        <div class="login-form-items submit">
-                            <input type="submit" value="Submit">
-                        </div>
-                    </form>
+                <div class="payment-options">
+                    <a href="#" onclick="closeOrderSummaryBox();" class="payment-options-item">Cancel</a>
+                    <a href="#" onclick="showSuccessPaymentBox();" class="payment-options-item">Payment</a>
+                </div>
+            </div>
+        </section>
+        <section id="success-overlay" class="body-item success-overlay">
+            <div class="success-overlay-box">
+                <div class="logo-header">
+                    <h1>Bagels & Bacon</h1>
+                </div>
+                <hr/>
+                <div class="success-msg">
+                    <p>You order has been accepted & payment completed. Please check order status in Status tab.</p>
                 </div>
             </div>
         </section>
