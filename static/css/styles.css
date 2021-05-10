@@ -33,52 +33,6 @@ a {
     background-size:contain;
 }
 
-/** intro 
---------------------------------------------- */
-.intro-header {
-    padding-top: 0;
-    position: relative;
-    width: 100%;
-}
-.intro-header a {
-    background-color: #FAF3E0; 
-    color: #1E212D;
-}
-
-.intro-header a:hover {
-    background-color: #EEE8D7;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
-.intro-content {
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    top: 35%;
-    /* left: 32%;  */
-    width: 100%;
-    align-items: center;
-    color: #faf3e0;
-}
-.explore {
-    padding: 10px 20px;
-    border-radius: 5%;
-    margin-left: 45%;
-}
-
-.intro-text {
-    text-align: center;
-}
-
-.intro-text h1 {
-    font-size: 100px;
-    font-weight: bolder;
-}
-.para-bigger {
-    text-align: center;
-    font-size: 20px;
-    font-weight: 1000;
-}
-
 /** about 
 --------------------------------------------- */
 .main-head-wrap {
@@ -210,30 +164,12 @@ footer {
     }
 }
 
-@media screen and (max-width:700px) {
-    .intro-content {
-        position: absolute;
-        /* left: 40%; */
-        top: 20%;
-    }
-    .explore {
-        margin-left: 40%;
-    }
-    .intro-text h1 {
-        font-size: 50px;
-        width: 100%;
-    }
-}
-
 @media screen and (max-width:500px) {
     body {
         font-size: 10px;
     }
     h1 {
         font-size: 30px;
-    }
-    .heading-jumbo { 
-        font-size: 20px;
     }
     .collection-wrap {
         width: 80%;

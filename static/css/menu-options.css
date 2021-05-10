@@ -23,12 +23,7 @@ color pallete
     margin: 10px 0;
     align-self: flex-start;
 }
-.intro-text {
-    padding-top: 20%;
-    /* margin-left: 5%; */
-    flex-grow: 1;
-    align-self: center;
-}
+
 .a-items {
     margin-right: 20px;
     padding: 0 10px;
@@ -117,9 +112,7 @@ color pallete
         align-self: flex-start;
         padding: 5px 10px;
     }
-    .intro-text{
-        align-self: center;
-    }
+
 }
 
 @media screen and (max-width:800px) {

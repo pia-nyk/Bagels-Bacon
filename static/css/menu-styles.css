@@ -22,14 +22,8 @@ li {
 
 /** header & nav bar
 ---------------------------------- */
-.intro-header {
-    padding: 0;
-}
-.loginform-link, .explore {
-    padding: 10px 20px;
-    border-radius: 5%;
-    margin-left: 45%;
-}
+
+
 
 /** info 
 ------------------------------ */
@@ -300,12 +294,6 @@ li {
         width: 80%;
         background-color: #FAF3E0;
     
-    }
-}
-
-@media screen and (max-width:700px) {
-    .loginform-link, .explore {
-        margin-left: 40%;
     }
 }
 

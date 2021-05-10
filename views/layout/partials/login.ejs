@@ -1,0 +1,54 @@
+<section class="body-item" id="form-section">
+    <div class="overlay-box">
+        <div class="overlay-box-links">
+            <a href="#form-section" onclick="toggleForm('sign-up');" class="sign-up">Sign Up</a>
+            <a href="#form-section" onclick="toggleForm('login');" class="login">Login</a>
+            <a href="#main-body" onclick="closeForm();" class="cancel"><b>X</b></a>
+        </div>
+        <div class="signup-box">
+            <div class="signup-header">
+                <h1>Sign Up</h1>
+            </div>
+            <form class="signup-form">
+                <div class="signup-form-items fname">
+                    <label for="fname">First Name:</label><br />
+                    <input type="text" id="fname" name="fname"><br>
+                </div>
+                <div class="signup-form-items lname">
+                    <label for="lname">Last Name:</label><br />
+                    <input type="text" id="lname" name="lname"><br>
+                </div>
+                <div class="signup-form-items mobile">
+                    <label for="mobile">Mobile Number:</label><br />
+                    <input type="text" id="mobile" name="mobile"><br>
+                </div>
+                <div class="signup-form-items email">
+                    <label for="email">Email Id:</label><br />
+                    <input type="text" id="email" name="email"><br>
+                </div>
+                <div class="signup-form-items submit">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+
+        <div class="login-box">
+            <div class="login-header">
+                <h1>Login</h1>
+            </div>
+            <form class="login-form">
+                <div class="login-form-items mobile">
+                    <label for="mobile">Mobile Number:</label><br />
+                    <input type="text" id="mobile" name="mobile"><br>
+                </div>
+                <div class="login-form-items lname">
+                    <label for="password">Password:</label><br />
+                    <input type="text" id="password" name="password"><br>
+                </div>
+                <div class="login-form-items submit">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="/css/header.css">
+<header>
+    <div class="header-container intro-header">
+        <img class="main-img" src="/images/new-background.jpg" alt="Restaurant Background" width="100%" height="100%">
+        <div class="intro-content">
+            <div class="intro-text">
+                <h1 class="heading-jumbo">Bagels & Bacon</h1>
+                <!-- <h2 class="para-bigger">Get ready to satiate your tastebuds</h2> -->
+            </div>
+            <% if(page==='index' ) { %>
+                <a href="#" class="mid-button">Explore</a>
+                <% } else if (page==='explore' ) { %>
+                    <a href="#form-section" onclick="displayForm();" class="mid-button">Order Now</a>
+                    <%}%>
+        </div>
+    </div>
+</header>

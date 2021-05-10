@@ -1,0 +1,68 @@
+{
+    "menuitems": [
+        {
+            "title": "Eggs & Bacon",
+            "price": "$2.99",
+            "shortname": "eggs-bacon",
+            "description": "<p>Healthy breakfast of sunny side up paired with crispy bacon slices.</p>",
+            "isFamous": "yes",
+            "image": "eggs-bacon.png"
+        },
+        {
+            "title": "Veg Burger",
+            "price": "$2.49",
+            "shortname": "veg-burger",
+            "description": "<p>Plump aloo tikki burger with french fries on the side.</p>",
+            "isFamous": "yes",
+            "image": "veg-burger.png"
+        },
+        {
+            "title": "Oreo Heaven",
+            "price": "$2.99",
+            "shortname": "oreo-heaven",
+            "description": "<p>Oreo filled chocolate pancakes.</p>",
+            "isFamous": "no",
+            "image": "oreo-heaven.png"
+        },
+        {
+            "title": "Donuts",
+            "price": "$1.99",
+            "shortname": "donut",
+            "description": "<p>Donut burger with bacon filling alongside garlic cheese bread.</p>",
+            "isFamous": "no",
+            "image": "donut.jpg"
+        },
+        {
+            "title": "Eggs & More",
+            "price": "$3.00",
+            "shortname": "eggs-more",
+            "description": "<p>Scrumptious lunch of sunny side up with rice & gravy.</p>",
+            "isFamous": "no",
+            "image": "eggs-more.png"
+        },
+        {
+            "title": "French Toast",
+            "price": "$3.00",
+            "shortname": "french-toast",
+            "description": "<p>Good ol' french toast with loads of honey & a glass of orange juice to balance the sweetness.</p>",
+            "isFamous": "yes",
+            "image": "french-toast.jpg"
+        },
+        {
+            "title": "Peach Mojito",
+            "price": "$1.49",
+            "shortname": "mojito",
+            "description": "<p>Refreshing peach drink.</p>",
+            "isFamous": "no",
+            "image": "mojito.png"
+        },
+        {
+            "title": "Chocolate Pancakes",
+            "price": "$2.99",
+            "shortname": "pancakes",
+            "description": "<p>Pancakes dipped in loads of chocolate sauce.</p>",
+            "isFamous": "no",
+            "image": "pancakes.png"
+        }
+    ]
+}

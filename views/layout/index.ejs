@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%=siteName%> | <%=pageTitle%>
+    </title>
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/menu-styles.css">
+    <script src="/js/main.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Caveat|Montserrat:400,600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <section id="main-body" class="body-item main-body">
+        <%- include(`./partials/header`, {page:`${template}`}) %>
+            <%- include(`../pages/${template}`) %>
+
+                <footer class="container">
+                    <h1>Follow Us</h1>
+                    <ul class="footer-items">
+                        <li><a href="#">bagels@gmail.com</a></li>
+                        <li><a href="#">facebook</a></li>
+                        <li><a href="#">instagram</a></li>
+                    </ul>
+                </footer>
+    </section>
+
+    <%- include('./partials/login') %>
+</body>
+
+</html>

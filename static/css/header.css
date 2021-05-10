@@ -1,0 +1,82 @@
+/**
+color pallete
+#FAF3E0 - milky
+#EABF9F - latte
+#B68973 - espresso
+#1E212D - cafe americano
+*/
+
+
+/** intro 
+--------------------------------------------- */
+.intro-header {
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+.intro-header a {
+    background-color: #FAF3E0; 
+    color: #1E212D;
+}
+
+.intro-header a:hover {
+    background-color: #EEE8D7;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.intro-content {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    top: 35%;
+    /* left: 32%;  */
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    color: #faf3e0;
+}
+.mid-button {
+    padding: 10px 20px;
+    border-radius: 5%;
+    margin-left: 47%;
+}
+
+.intro-text {
+    padding-top: 0%;
+    /* margin-left: 5%; */
+    flex-grow: 1;
+    text-align: center;
+}
+.intro-text h1 {
+    font-size: 100px;
+    font-weight: bolder;
+}
+
+/** responsive
+------------------------------------*/
+@media screen and (max-width:700px) {
+    .intro-content {
+        position: absolute;
+        /* left: 40%; */
+        top: 30%;
+    }
+    .mid-button {
+        margin-left: 45%;
+        padding: 7px 14px;
+    }
+    .intro-text h1 {
+        font-size: 70px;
+        width: 100%;
+    }
+    .intro-text{
+        align-self: center;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .intro-text h1 { 
+        font-size: 50px;
+    }
+    .mid-button {
+        margin-left: 42%;
+    }
+}

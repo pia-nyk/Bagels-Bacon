@@ -1,0 +1,102 @@
+<div class="container info">
+    <div class="info-wrap">
+        <h1>What we offer</h1>
+        <p>Pleasant dining experience for all moods</p>
+    </div>
+    <hr />
+    <div class="flex-container">
+        <div class="cuisines flex-items">
+            <h3>Cuisines Available</h3>
+            <ul class="cuisine-list">
+                <li class="cuisine-items"><a href="#">Cafe</a></li>
+                <li class="cuisine-items"><a href="#">American</a></li>
+                <li class="cuisine-items"><a href="#">Burger</a></li>
+                <li class="cuisine-items"><a href="#">Beverage</a></li>
+                <li class="cuisine-items"><a href="#">Dessert</a></li>
+            </ul>
+        </div>
+        <div class="more-info flex-items">
+            <ul class="facilities-list">
+                <li class="facility-item">
+                    <p><b><span>&#10003;</span></b>Breakfast</p>
+                </li>
+                <li class="facility-item">
+                    <p><b><span>&#10003;</span></b>Seating</p>
+                </li>
+                <li class="facility-item">
+                    <p><b><span>&#10003;</span></b>Pet Friendly</p>
+                </li>
+                <li class="facility-item">
+                    <p><b><span>&#10003;</span></b>Home Delivery</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<section class="menu-section">
+
+    <div class="container menu">
+        <div class="menu-heading">
+            <h1>Menu Items</h1>
+            <p>Check out our worldclass menu items</p>
+        </div>
+        <hr />
+        <ul class="menu-item-list">
+            <% allMenuItems.forEach(item=> { %>
+                <li class="menu-item">
+                    <img src="/images/<%=item.image%> " alt=<%=item.name%> width="200px" height="200px">
+                    <div class="item-desc">
+                        <a href="#">
+                            <p>
+                                <%=item.name%>
+                            </p>
+                        </a>
+                        <h4>$1.99</h4>
+                    </div>
+                </li>
+                <%}) %>
+        </ul>
+    </div>
+</section>
+
+<section class="reviews-section">
+    <div class="review-form flex-item">
+        <div class="feedback-heading">
+            <h1>Let us Know</h1>
+        </div>
+        <form action="">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name"><br>
+            <label for="head">Title:</label><br>
+            <input type="text" id="head" name="head"><br>
+            <label for="enquiry">Enquiry:</label><br />
+            <textarea id="enquiry-text" name="enquiry-text" rows="4"></textarea><br />
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <div class="container reviews flex-item">
+        <div class="reviews-heading">
+            <h1>Our Customers say...</h1>
+        </div>
+        <ul class="review-items-list">
+            <li class="review-items">
+                <h3>Poster Name</h3>
+                <h4>Title here</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+            </li>
+            <li class="review-items">
+                <h3>Poster Name</h3>
+                <h4>Title here</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+            </li>
+            <li class="review-items">
+                <h3>Poster Name</h3>
+                <h4>Title here</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                    labore et
+                    dolore magna aliqua.</p>
+            </li>
+        </ul>
+        <a href="#" class="all-reviews"> See all reviews &#8594;</a>
+    </div>
+</section>
