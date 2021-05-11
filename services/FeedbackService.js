@@ -36,7 +36,7 @@ class FeedbackService {
         return writeFile(this.datafile, JSON.stringify(data));
     }
 
-    async getNLatestComments() {
+    async getNLatestComments(size) {
         const data = await this.getData();
         const feedbacks = data.filter(item => {
             return data.indexOf(item) < 3;

@@ -8,30 +8,7 @@ color pallete
 
 /** global 
 ---------------------------------------*/
-.menu-option-grid {
-    display: inline-flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    
-}
-.menu-option-grid-item {
-    border-radius: 5%;
-    text-align: center;
-    padding: 10px 20px;
-    margin: 0;
-    height: fit-content;
-    margin: 10px 0;
-    align-self: flex-start;
-}
 
-.a-items {
-    margin-right: 20px;
-    padding: 0 10px;
-    font-weight: 700;
-}
-.bars {
-    margin-left: 20px;
-}
 /** menu options 
 ---------------------------------------*/
 
@@ -101,19 +78,6 @@ color pallete
 
 /** responsive
 ---------------------------------------*/
-@media screen and (max-width:700px) {
-    .menu-option-grid {
-        top: 0;
-        left: 0;
-        align-items: stretch;
-        height: 300px;
-    }
-    .menu-option-grid-item {
-        align-self: flex-start;
-        padding: 5px 10px;
-    }
-
-}
 
 @media screen and (max-width:800px) {
     .logo-header h1 {

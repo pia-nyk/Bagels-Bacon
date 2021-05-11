@@ -1,19 +1,22 @@
-{
-    "feedbacks": [
-        {
-            "name": "Gloria DSilva",
-            "title": "Great Experience",
-            "message": "I came with my family for dinner, was a great experience."
-        },
-        {
-            "name": "Justin Duke",
-            "title": "Would highly recommend the place",
-            "message": "Great ambience, awesome food, definitely a must go."
-        },
-        {
-            "name": "Pansy Walker",
-            "title": "Became a fan of sunny side up served here",
-            "message": "Great taste, all the items we ordered were above par."
-        }
-    ]
-}
+[
+    {
+        "name": "Priya",
+        "title": "Good food good life",
+        "message": "Great Experience"
+    },
+    {
+        "name": "Gloria DSilva",
+        "title": "Great Experience",
+        "message": "I came with my family for dinner, was a great experience."
+    },
+    {
+        "name": "Justin Duke",
+        "title": "Would highly recommend the place",
+        "message": "Great ambience, awesome food, definitely a must go."
+    },
+    {
+        "name": "Pansy Walker",
+        "title": "Became a fan of sunny side up served here",
+        "message": "Great taste, all the items we ordered were above par."
+    }
+]

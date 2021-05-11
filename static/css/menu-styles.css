@@ -20,6 +20,23 @@ li {
     list-style-type: none;
 }
 
+.msg-box {
+    width: 90%;
+    text-align: center;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+.error-msg-box {
+    border: 2px solid red;
+    color: red;
+}
+
+.success-msg-box {
+    border: 2px solid green;
+    color: green;
+}
+
 /** header & nav bar
 ---------------------------------- */
 

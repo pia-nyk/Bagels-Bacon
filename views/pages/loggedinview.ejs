@@ -42,16 +42,25 @@
         </div>
         <hr />
         <ul class="menu-item-list">
-            <% allMenuItems.forEach(item=> { %>
+            <% allMenuItems.forEach((item, index)=> { %>
                 <li class="menu-item">
-                    <img src="/images/<%=item.image%> " alt=<%=item.name%> width="200px" height="200px">
+                    <div class="menu-item-overlay">
+                        <img onmouseover="showAddButton(this.id, 'menu-item-button-<%=index%>');"
+                            onmouseout="hideAddButton(this.id, 'menu-item-button-<%=index%>');"
+                            src="/images/<%=item.image%>" alt=<%=item.name%>
+                        width="200px" height="200px"
+                        id="menu-item-img-<%=index%>">
+                            <a href="#"
+                                onmouseover="showAddButton('menu-item-img-<%=index%>', 'menu-item-button-<%=index%>');"
+                                class="menu-item-button" id="menu-item-button-<%=index%>">Add</a>
+                    </div>
                     <div class="item-desc">
-                        <a href="#">
-                            <p>
-                                <%=item.name%>
-                            </p>
-                        </a>
-                        <h4>$1.99</h4>
+                        <p>
+                            <%=item.name%>
+                        </p>
+                        <h4>
+                            <%=item.price%>
+                        </h4>
                     </div>
                 </li>
                 <%}) %>

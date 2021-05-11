@@ -5,6 +5,10 @@ const path = require("path");
 const app = express();
 const port = 3000;
 
+const createError = require('http-errors');
+const bodyParser = require('body-parser');
+const cookieSession = require("cookie-session");
+
 const routes = require('./routes');
 
 /**
@@ -23,6 +27,16 @@ app.set('views', path.join(__dirname, '/views'));
 app.locals.siteName = 'Bagels & Bacon';
 
 app.use(express.static(path.join(__dirname, '\static')));
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.set('trust proxy', 1);
+
+app.use(
+    cookieSession({
+        name: 'session',
+        keys: ['Ghsbdv83js', 'hgd6387nj']
+    })
+);
 
 app.use((request, response, next) => {
     response.locals.variable = 'hello';
@@ -33,6 +47,18 @@ app.use('/', routes({
     menuService,
     feedbackService
 }));
+
+app.use((request, response, next) => {
+    return next(createError(404, 'File not found'));
+});
+
+app.use((err, request, response, next) => {
+    response.locals.message = err.message;
+    const status = err.status || 500;
+    response.locals.status = status;
+    response.status(status);
+    response.render('error');
+});
 
 app.listen(port, () => {
     console.log(`Listening to port ${port}`);

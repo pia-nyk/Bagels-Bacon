@@ -1,0 +1,55 @@
+<section class="reviews-section">
+    <div class="review-form flex-item" id="review-form">
+        <div class="feedback-heading">
+            <h1>Let us Know</h1>
+        </div>
+
+        <% if(locals.errors) { %>
+            <div class="msg-box error-msg-box">
+                <ul>
+                    <% errors.forEach(error=> { %>
+                        <li>
+                            <%= error.msg%>
+                        </li>
+                        <%}) %>
+                </ul>
+            </div>
+            <%} else if(locals.success) {%>
+                <div class="msg-box success-msg-box">
+                    <%= success%>
+                </div>
+                <%} %>
+
+                    <form method="POST" action="/feedback">
+                        <label for="name">Name:</label><br>
+                        <input type="text" id="name" name="name"><br>
+                        <label for="head">Title:</label><br>
+                        <input type="text" id="head" name="head"><br>
+                        <label for="enquiry">Enquiry:</label><br />
+                        <textarea id="message" name="message" rows="4"></textarea><br />
+                        <input type="submit" onclick="document.getElementById('review-form').focus();" value="Submit">
+                    </form>
+    </div>
+    <div class="container reviews flex-item">
+        <div class="reviews-heading">
+            <h1>Our Customers say...</h1>
+        </div>
+        <ul class="review-items-list">
+            <% topComments.forEach(comment=> { %>
+                <li class="review-items">
+                    <h3 style="line-height: 0.3;">
+                        <%=comment.name%>
+                    </h3>
+                    <h5>
+                        <%=comment.title%>
+                    </h5>
+                    <p>
+                        <%=comment.message%>
+                    </p>
+                </li>
+                <br />
+                <% }) %>
+        </ul>
+        <a href="#" class="all-reviews"> See all reviews &#8594;</a>
+    </div>
+</section>
