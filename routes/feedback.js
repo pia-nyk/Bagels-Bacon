@@ -7,6 +7,10 @@ const router = express.Router();
 module.exports = (params) => {
 
     const { feedbackService } = params;
+
+    /**
+     * check the input for proper format
+     */
     router.post('/',
         [
             check('name')
@@ -26,6 +30,7 @@ module.exports = (params) => {
                 .withMessage('A message is required')
         ],
         async (request, response) => {
+            //if checks arent satisfied, errors will be given 
             const errors = validationResult(request);
             if (!errors.isEmpty()) {
                 request.session.feedback = {
@@ -34,6 +39,7 @@ module.exports = (params) => {
                 return response.redirect('/menu');
             }
 
+            //if alls fine, then save the feedback form data to json
             const { name, head, message } = request.body;
             await feedbackService.addEntry(name, head, message);
             request.session.feedback = {

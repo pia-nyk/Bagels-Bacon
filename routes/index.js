@@ -10,6 +10,7 @@ module.exports = (params) => {
 
     const { menuService } = params;
 
+    //main - index route
     router.get('/', async (request, response, next) => {
         try {
             const famousMenuItems = await menuService.getFamousItems();
@@ -24,6 +25,9 @@ module.exports = (params) => {
         }
     });
 
+    /**
+     * add all routes
+     */
     router.use('/menu', menuRoute(params));
     router.use('/userview', userviewRoute(params));
     router.use('/feedback', feedbackRoute(params));

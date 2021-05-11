@@ -49,13 +49,17 @@ class MenuService {
     }
 
     /**
-     * Fetches speakers data from the JSON file provided to the constructor
+     * Fetches menu items from the JSON file provided to the constructor
      */
     async getData() {
         const data = await readFile(this.datafile, "utf8");
         return JSON.parse(data).menuitems;
     }
 
+    /**
+     * 
+     * @returns get items with isFamous: yes for the main page
+     */
     async getFamousItems() {
         const data = await this.getData();
         const menuitems = data.filter(item => {

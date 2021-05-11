@@ -1,0 +1,97 @@
+/**
+color pallete
+#FAF3E0 - milky
+#EABF9F - latte
+#B68973 - espresso
+#1E212D - cafe americano
+*/
+
+
+/** login form 
+--------------------------------------- */
+#form-section {
+    display: none;
+    margin-top: 30%;
+
+}
+.overlay-box {
+    margin: 0 auto;
+    width: 50%;
+    background-color: #FAF3E0;
+    border: 1px solid #B68973;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1), 0 6px 20px 0 rgba(0,0,0,0.15);
+}
+.overlay-box-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr 75px;
+    text-align: center;
+    border: 2px solid #B68973;
+    border-bottom: 0;
+}
+.overlay-box-links a {
+    padding: 0 40px 20px 40px;
+    color: #1E212D;
+}
+.overlay-box-links .sign-up {
+    border-right: none;
+    border-bottom: none;
+}
+.overlay-box-links .login {
+    border: 2px solid #B68973;
+    border-top: 0
+}
+.signup-box {
+    text-align: center;
+    padding: 30px 0;
+    border: 2px solid #B68973;
+    border-top: 0;
+    display: block;
+}
+.signup-header {
+    margin-top: 5%;
+}
+.signup-form-items, .login-form-items {
+    margin: 10px 0;
+}
+
+.signup-form-items input[type=submit], .login-form-items input[type=submit] {
+    width: 25%;
+    background-color: #EABF9F;
+    color: #1E212D;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+}
+
+.signup-form-items input[type=text], .login-form-items input[type=text] {
+    width: 70%;
+}
+
+.login-box {
+    text-align: center;
+    padding: 30px 0;
+    border: 2px solid #B68973;
+    border-top: 0;
+    display: none;
+}
+
+/** responsive
+--------------------------------------- */
+
+@media screen and (max-width:750px) {
+    .overlay-box {
+        margin: 0 auto;
+        width: 80%;
+        background-color: #FAF3E0;
+    
+    }
+}
+
+@media screen and (max-width:500px) {
+    .login-form-items input[type=submit] {
+        font-size: 10px;
+    }
+
+    .signup-form-items input[type=submit] {
+        font-size: 10px;
+    }
+}

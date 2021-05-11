@@ -6,30 +6,6 @@ color pallete
 #1E212D - cafe americano
 */
 
-/** global 
----------------------------------------*/
-
-/** menu options 
----------------------------------------*/
-
-
-/** menu items 
----------------------------------------*/
-.menu-item-overlay {
-    position: relative;
-}
-.menu-item-button {
-    position: absolute;
-    left: 32%;
-    top: 40%;
-    background-color: #1E212D;
-    color: #FAF3E0;
-    padding: 10px 20px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1), 0 6px 20px 0 rgba(0,0,0,0.15);
-    border-radius: 5%;
-    display: none;
-}
-
 /** order summary
 ------------------------------------------*/
 .order-summary-overlay, .success-overlay {
@@ -80,9 +56,6 @@ color pallete
 ---------------------------------------*/
 
 @media screen and (max-width:800px) {
-    .logo-header h1 {
-        font-size: 40px;
-    }
     .order-items, .order-total, .order-summary h3, .payment-options {
         font-size: 15px;
     }
@@ -92,9 +65,6 @@ color pallete
 }
 
 @media screen and (max-width:650px) {
-    .logo-header h1 {
-        font-size: 30px;
-    }
     .order-items, .order-total, .order-summary h3, .payment-options {
         font-size: 10px;
     }

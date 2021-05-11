@@ -4,9 +4,7 @@ const util = require('util');
 const readFile = util.promisify(fs.readFile);
 const writeFile = util.promisify(fs.writeFile);
 
-/**
- * Logic for reading and writing feedback data
- */
+
 class FeedbackService {
     /**
      * Constructor
@@ -36,6 +34,11 @@ class FeedbackService {
         return writeFile(this.datafile, JSON.stringify(data));
     }
 
+    /**
+     * gets top size items - todo: fix
+     * @param {*} size 
+     * @returns 
+     */
     async getNLatestComments(size) {
         const data = await this.getData();
         const feedbacks = data.filter(item => {
