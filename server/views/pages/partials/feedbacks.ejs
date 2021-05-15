@@ -4,19 +4,13 @@
             <h1>Let us Know</h1>
         </div>
 
-        <% if(locals.errors) { %>
+        <% if(feedbackResult==='failure' ) { %>
             <div class="msg-box error-msg-box">
-                <ul>
-                    <% errors.forEach(error=> { %>
-                        <li>
-                            <%= error.msg%>
-                        </li>
-                        <%}) %>
-                </ul>
+                <p>Please fill in all details properly </p>
             </div>
-            <%} else if(locals.success) {%>
+            <%} else if(feedbackResult==='success' ) {%>
                 <div class="msg-box success-msg-box">
-                    <%= success%>
+                    <p>Thank you for the feedback.</p>
                 </div>
                 <%} %>
 

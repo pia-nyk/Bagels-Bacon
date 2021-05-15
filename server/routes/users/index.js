@@ -3,31 +3,32 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 const UserModel = require('../../models/UserModel');
+const FeedbackModel = require('../../models/FeedbackModel');
 
 module.exports = (params) => {
 
     const { menuService, feedbackService } = params;
     router.get('/account', async (request, response, next) => {
         try {
-            //users can access account page only if logged in
             if (!request.user) {
                 return response.status(401).end();
             }
-            //get the errors & success msgs to be displayed in UI form
-            const errors = request.session.feedback.errors ? request.session.feedback.errors : false;
-            const success = request.session.feedback.message ? request.session.feedback.message : false;
-            request.session.feedback = {};
+            var feedbackResult = false;
+            if (request.query.success) {
+                feedbackResult = 'success';
+            } else if (request.query.failure) {
+                feedbackResult = 'failure';
+            }
 
-            const allMenuItems = await menuService.getMenuItems();
-            const topComments = await feedbackService.getList();
+            const allMenuItems = await menuService.getAllMenuItems();
+            const topComments = await feedbackService.getAllFeedbacks();
             return response.render('layout',
                 {
                     pageTitle: `Welcome ${request.user.firstName} ${request.user.lastName}`,
                     template: 'loggedinview',
                     allMenuItems,
                     topComments,
-                    errors,
-                    success
+                    feedbackResult
                 })
         } catch (err) {
             return next(err);

@@ -44,14 +44,16 @@
         <ul class="menu-item-list">
             <% allMenuItems.forEach(item=> { %>
                 <li class="menu-item">
-                    <img src="/images/<%=item.image%> " alt=<%=item.name%> width="200px" height="200px">
+                    <img src="/images/<%=item.image%> " alt=<%=item.title%> width="200px" height="200px">
                     <div class="item-desc">
                         <a href="#">
                             <p>
-                                <%=item.name%>
+                                <%=item.title%>
                             </p>
                         </a>
-                        <h4>$1.99</h4>
+                        <h4>
+                            $<%=item.price%>
+                        </h4>
                     </div>
                 </li>
                 <%}) %>

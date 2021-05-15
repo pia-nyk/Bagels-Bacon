@@ -27,14 +27,14 @@
         <div class="collection-wrap">
             <% famousMenuItems.forEach(item=> { %>
                 <div class="collection-item">
-                    <img class="prod-img-wrap" src="/images/<%=item.image%> " alt=<%=item.name%> width="100%"
+                    <img class="prod-img-wrap" src="/images/<%=item.image%> " alt=<%=item.title%> width="100%"
                     height="400px">
                     <div class="prod-desc">
                         <h3>
-                            <%=item.name%>
+                            <%=item.title%>
                         </h3>
                         <p>
-                            <%=item.price%>
+                            $<%=item.price%>
                         </p>
                     </div>
                 </div>

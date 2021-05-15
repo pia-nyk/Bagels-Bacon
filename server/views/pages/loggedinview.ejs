@@ -47,7 +47,7 @@
                     <div class="menu-item-overlay">
                         <img onmouseover="showAddButton(this.id, 'menu-item-button-<%=index%>');"
                             onmouseout="hideAddButton(this.id, 'menu-item-button-<%=index%>');"
-                            src="/images/<%=item.image%>" alt=<%=item.name%>
+                            src="/images/<%=item.image%>" alt=<%=item.title%>
                         width="200px" height="200px"
                         id="menu-item-img-<%=index%>">
                             <a href="#"
@@ -56,10 +56,10 @@
                     </div>
                     <div class="item-desc">
                         <p>
-                            <%=item.name%>
+                            <%=item.title%>
                         </p>
                         <h4>
-                            <%=item.price%>
+                            $<%=item.price%>
                         </h4>
                     </div>
                 </li>

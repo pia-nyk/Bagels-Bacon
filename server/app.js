@@ -21,8 +21,8 @@ const FeedbackService = require('./services/FeedbackService');
 
 module.exports = (config) => {
     const app = express();
-    const menuService = new MenuService(config.data.menu);
-    const feedbackService = new FeedbackService(config.data.feedbacks);
+    const menuService = new MenuService();
+    const feedbackService = new FeedbackService();
 
     app.set('view engine', 'ejs');
     app.set('views', path.join(__dirname, '/views'));

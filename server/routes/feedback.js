@@ -1,12 +1,13 @@
 const { request, response } = require('express');
 const express = require('express');
 const { check, validationResult } = require('express-validator');
+const FeedbackModel = require('../models/FeedbackModel');
 
 const router = express.Router();
 
 function feedbackValidations() {
     var validations = [
-        check('head')
+        check('title')
             .trim()
             .isLength({ min: 3 })
             .escape()
@@ -38,41 +39,35 @@ module.exports = (params) => {
     router.post('/',
         async (request, response, next) => {
             try {
-                const errors = validationResult(request);
-                console.log(errors);
-                if (!errors.isEmpty()) {
-                    request.session.feedback = {
-                        errors: errors.array(),
-                    };
-                    if (request.user) {
-                        return response.redirect('/users/account#review-form');
-                    } else {
-                        return response.redirect('/explore');
-                    }
-                }
-
-                //if alls fine, then save the feedback form data to json
-                const { head, message } = request.body;
                 var name = null;
-                console.log(request.user);
                 if (request.user) {
                     name = `${request.user.firstName} ${request.user.lastName}`;
                 } else {
                     name = request.body.name;
                 }
-                await feedbackService.addEntry(name, head, message);
-                request.session.feedback = {
-                    message: 'Thank you for the feedback!',
-                };
 
-                if (request.user) {
-                    return response.redirect('/users/account#review-form');
-                } else {
-                    return response.redirect('/explore');
+                const feedback = new FeedbackModel({
+                    name,
+                    title: request.body.head,
+                    message: request.body.message
+                });
+
+                const savedFeedback = await feedback.save();
+                if (savedFeedback) {
+                    if (request.user) {
+                        return response.redirect('/users/account?success=true#review-form');
+                    } else {
+                        return response.redirect('/explore?success=true#review-form');
+                    }
                 }
+
             } catch (err) {
                 console.log(err);
-                return next(err);
+                if (request.user) {
+                    return response.redirect('/users/account?failure=true#review-form');
+                } else {
+                    return response.redirect('/explore?failure=true#review-form');
+                }
             }
             //if checks arent satisfied, errors will be given
         });

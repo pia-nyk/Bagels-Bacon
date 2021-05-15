@@ -3,6 +3,7 @@ const express = require('express');
 const { request } = require('http');
 const router = express.Router();
 const UserModel = require('../models/UserModel');
+const MenuModel = require('../models/MenuModel');
 
 function redirectIfLoggedIn(request, response, next) {
     if (request.user) return response.redirect('/users/account');
@@ -14,21 +15,23 @@ module.exports = (params) => {
 
     router.get('/', redirectIfLoggedIn, async (request, response, next) => {
         try {
-            //get the errors & success msgs to be displayed in UI form
-            const errors = request.session.feedback.errors ? request.session.feedback.errors : false;
-            const success = request.session.feedback.message ? request.session.feedback.message : false;
-            request.session.feedback = {};
 
-            const allMenuItems = await menuService.getMenuItems();
-            const topComments = await feedbackService.getList();
+            var feedbackResult = false;
+            if (request.query.success) {
+                feedbackResult = 'success';
+            } else if (request.query.failure) {
+                feedbackResult = 'failure';
+            }
+
+            const allMenuItems = await menuService.getAllMenuItems();
+            const topComments = await feedbackService.getAllFeedbacks();
             response.render('layout',
                 {
                     pageTitle: 'Explore',
                     template: 'explore',
                     allMenuItems,
-                    topComments
-                    // errors,
-                    // success
+                    topComments,
+                    feedbackResult
                 })
         } catch (err) {
             console.log(err);
@@ -46,8 +49,8 @@ module.exports = (params) => {
             }
 
             console.log(request.query.registration);
-            const allMenuItems = await menuService.getMenuItems();
-            const topComments = await feedbackService.getList();
+            const allMenuItems = await menuService.getAllMenuItems();
+            const topComments = await feedbackService.getAllFeedbacks();
             response.render('layout',
                 {
                     pageTitle: 'Explore',
