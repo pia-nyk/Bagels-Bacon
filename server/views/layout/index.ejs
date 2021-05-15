@@ -3,7 +3,7 @@
 
 <head>
     <title>
-        <%=siteName%> | <%=pageTitle%>
+        <%=sitename%> | <%=pageTitle%>
     </title>
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -29,10 +29,19 @@
                 </footer>
     </section>
     <% if(template==='explore' ) { %>
-        <%- include('../pages/partials/login') %>
+        <%- include('../pages/partials/login', {registrationResult: locals.registrationResult ? registrationResult :
+            false, registration: locals.registration ? registration : false}) %>
             <%} else if(template==='loggedinview' ) {%>
                 <%- include('../pages/partials/order') %>
                     <%}%>
+
 </body>
+
+<% if(template==='explore' && locals.registration ) { %>
+    <script>
+        var registration = '<%= registration %>';
+        document.getElementsByTagName('body')[0].onload = function () { displayForm(); toggleForm(registration); };
+    </script>
+    <% } %>
 
 </html>

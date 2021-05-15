@@ -32,6 +32,7 @@ module.exports = (params) => {
         async (request, response) => {
             //if checks arent satisfied, errors will be given 
             const errors = validationResult(request);
+            console.log(errors);
             if (!errors.isEmpty()) {
                 request.session.feedback = {
                     errors: errors.array(),

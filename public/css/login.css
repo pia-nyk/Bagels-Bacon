@@ -11,7 +11,7 @@ color pallete
 --------------------------------------- */
 #form-section {
     display: none;
-    margin-top: 30%;
+    margin-top: 10%;
 
 }
 .overlay-box {
@@ -62,7 +62,8 @@ color pallete
     font-size: 17px;
 }
 
-.signup-form-items input[type=text], .login-form-items input[type=text] {
+.signup-form-items input[type=text], .signup-form-items input[type=password], .login-form-items input[type=text],
+.login-form-items input[type=password] {
     width: 70%;
 }
 

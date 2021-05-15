@@ -4,7 +4,7 @@ function toggleForm(formtypeclass) {
     var linkclassNeg;
     var boxclass;
     var boxclassNeg;
-    if(formtypeclass === "sign-up") {
+    if (formtypeclass === "sign-up") {
         linkclassNeg = document.getElementsByClassName("login")[0];
         boxclassNeg = document.getElementsByClassName("login-box")[0];
         boxclass = document.getElementsByClassName("signup-box")[0];
@@ -12,7 +12,7 @@ function toggleForm(formtypeclass) {
         linkclassNeg = document.getElementsByClassName("sign-up")[0];
         boxclass = document.getElementsByClassName("login-box")[0];
         boxclassNeg = document.getElementsByClassName("signup-box")[0];
-    } 
+    }
     boxclass.style.display = "block";
     boxclassNeg.style.display = "none";
 
@@ -29,7 +29,7 @@ function unsetBorder(elementName) {
 }
 
 function setBorder(elementName) {
-    if(elementName.className === "sign-up") {
+    if (elementName.className === "sign-up") {
         elementName.style.borderRight = borderCss;
     } else {
         elementName.style.borderLeft = borderCss;

@@ -1,8 +1,8 @@
 const express = require('express');
 
-const menuRoute = require('./menu');
-const userviewRoute = require('./userview');
+const exploreRoute = require('./explore');
 const feedbackRoute = require('./feedback');
+const userRoute = require('./users/');
 
 const router = express.Router();
 
@@ -28,8 +28,8 @@ module.exports = (params) => {
     /**
      * add all routes
      */
-    router.use('/menu', menuRoute(params));
-    router.use('/userview', userviewRoute(params));
+    router.use('/explore', exploreRoute(params));
     router.use('/feedback', feedbackRoute(params));
+    router.use('/users', userRoute(params));
     return router;
 }

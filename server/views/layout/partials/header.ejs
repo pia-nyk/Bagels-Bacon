@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="/css/header.css">
+<header>
+    <div class="header-container intro-header">
+        <img class="main-img" src="/images/new-background.jpg" alt="Restaurant Background" width="100%" height="100%">
+        <% if(page==='index' || page==='explore' ) { %>
+            <div class="intro-content menu-option-grid
+            ">
+                <div class="intro-text menu-option-grid-item">
+                    <h1>Bagels & Bacon</h1>
+                    <% if(page==='index' ) { %>
+                        <a href="/explore" class="mid-button">Explore</a>
+                        <% } else if (page==='explore' ) { %>
+                            <a href="#form-section" onclick="displayForm();" class="mid-button">Order Now</a>
+                            <%}%>
+                </div>
+                <% if(user) {%>
+                    <a title="Logout" href="/users/logout" class="a-items menu-option-grid-item"><i
+                            class="fa fa-sign-out"></i></a>
+                    <%} %>
+            </div>
+
+    </div>
+    <%} else {%>
+        <div class="intro-content menu-option-grid">
+            <a title="Menu" href="#" class="a-items menu-option-grid-item bars"><i class="fa fa-bars"></i></a>
+            <div class="intro-text menu-option-grid-item">
+                <h1 class="heading-jumbo">Bagels & Bacon</h1>
+                <% if(user) { %>
+                    <h2 class="para-bigger">
+                        Welcome <%= user.firstName %>
+                            <%= user.lastName %>
+                    </h2>
+                    <%}%>
+
+            </div>
+            <a title="Cart" href="#order-summary-overlay" onclick="showOrderSummaryBox();"
+                class="a-items menu-option-grid-item"><i class="fa fa-cart-arrow-down"></i></a>
+            <a title="Logout" href="/users/logout" class="a-items menu-option-grid-item"><i
+                    class="fa fa-sign-out"></i></a>
+        </div>
+        <%}%>
+            </div>
+</header>

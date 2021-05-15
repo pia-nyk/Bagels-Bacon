@@ -1,0 +1,70 @@
+<link rel="stylesheet" href="/css/login.css">
+<section class="body-item" id="form-section">
+    <div class="overlay-box">
+        <div class="overlay-box-links">
+            <a href="#form-section" onclick="toggleForm('sign-up');" class="sign-up">Sign Up</a>
+            <a href="#form-section" onclick="toggleForm('login');" class="login">Login</a>
+            <a href="#main-body" onclick="closeForm();" class="cancel"><b>X</b></a>
+        </div>
+        <div class="signup-box">
+            <div class="signup-header">
+                <h1>Sign Up</h1>
+            </div>
+            <% if(registration==='sign-up' && registrationResult==='success' ) { %>
+                <h4>Thank you for registration.</h4>
+                <% } else {%>
+                    <% if(registration==='sign-up' && registrationResult==='failure' ) { %>
+                        <p style="color: red;">An error occured, please try to register again!</p>
+                        <% }%>
+                            <form class="signup-form" action="/users/registration" method="POST">
+                                <div class="signup-form-items fname">
+                                    <label for="fname">First Name:</label><br />
+                                    <input type="text" id="fname" name="fname"><br>
+                                </div>
+                                <div class="signup-form-items lname">
+                                    <label for="lname">Last Name:</label><br />
+                                    <input type="text" id="lname" name="lname"><br>
+                                </div>
+                                <div class="signup-form-items username">
+                                    <label for="username">Username:</label><br />
+                                    <input type="text" id="username" name="username"><br>
+                                </div>
+                                <div class="signup-form-items email">
+                                    <label for="email">Email Id:</label><br />
+                                    <input type="text" id="email" name="email"><br>
+                                </div>
+                                <div class="signup-form-items password">
+                                    <label for="password">Password:</label><br />
+                                    <input type="password" id="password" name="password"><br>
+                                </div>
+                                <div class="signup-form-items submit">
+                                    <input type="submit" value="Submit">
+                                </div>
+                            </form>
+                            <% } %>
+
+        </div>
+
+        <div class="login-box">
+            <div class="login-header">
+                <h1>Login</h1>
+            </div>
+            <% if (registration==='login' && registrationResult==='failure' ) { %>
+                <p style="color: red;">Invalid Username or Password</p>
+                <%}%>
+                    <form class="login-form" action="/users/login" method="POST">
+                        <div class="login-form-items username">
+                            <label for="username">Username:</label><br />
+                            <input type="text" id="username" name="username"><br>
+                        </div>
+                        <div class="login-form-items password">
+                            <label for="password">Password:</label><br />
+                            <input type="password" id="password" name="password"><br>
+                        </div>
+                        <div class="login-form-items submit">
+                            <input type="submit" value="Submit">
+                        </div>
+                    </form>
+        </div>
+    </div>
+</section>

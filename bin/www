@@ -1,0 +1,32 @@
+
+const http = require('http');
+const config = require('../server/config')[process.env.NODE_ENV || 'development'];
+const app = require('../server/app.js')(config);
+const db = require('../server/lib/db');
+
+const port = 3000;
+app.set('port', port);
+
+
+const server = http.createServer(app);
+
+/**
+ * connection to db required to start listening on port
+ */
+db.connect(config.database.dsn)
+  .then(() => {
+    console.log('Connected to MongoDB');
+    server.listen(port);
+  })
+  .catch(err => {
+    console.log(`Error in connecting to MongoDB ${err}`);
+  });
+
+server.on('listening', () => {
+  const addr = server.address();
+  const bind = typeof addr === 'string'
+    ? `pipe ${addr}`
+    : `port ${addr.port}`;
+  console.log(`Listening on ${bind}`);
+});
+
