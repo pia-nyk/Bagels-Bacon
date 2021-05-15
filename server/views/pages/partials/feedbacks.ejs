@@ -21,11 +21,13 @@
                 <%} %>
 
                     <form method="POST" action="/feedback">
-                        <label for="name">Name:</label><br>
-                        <input type="text" id="name" name="name"><br>
+                        <% if(!user) {%>
+                            <label for="name">Name:</label><br>
+                            <input type="text" id="name" name="name"><br>
+                        <%} %>
                         <label for="head">Title:</label><br>
                         <input type="text" id="head" name="head"><br>
-                        <label for="enquiry">Enquiry:</label><br />
+                        <label for="feedback">Feedback:</label><br />
                         <textarea id="message" name="message" rows="4"></textarea><br />
                         <input type="submit" onclick="document.getElementById('review-form').focus();" value="Submit">
                     </form>

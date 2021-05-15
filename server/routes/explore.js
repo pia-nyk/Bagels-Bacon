@@ -4,7 +4,7 @@ const { request } = require('http');
 const router = express.Router();
 const UserModel = require('../models/UserModel');
 
-function redirecIfLoggedIn(request, response, next) {
+function redirectIfLoggedIn(request, response, next) {
     if (request.user) return response.redirect('/users/account');
     return next();
 }
@@ -12,7 +12,7 @@ function redirecIfLoggedIn(request, response, next) {
 module.exports = (params) => {
     const { menuService, feedbackService } = params;
 
-    router.get('/', redirecIfLoggedIn, async (request, response, next) => {
+    router.get('/', redirectIfLoggedIn, async (request, response, next) => {
         try {
             //get the errors & success msgs to be displayed in UI form
             const errors = request.session.feedback.errors ? request.session.feedback.errors : false;
@@ -26,9 +26,9 @@ module.exports = (params) => {
                     pageTitle: 'Explore',
                     template: 'explore',
                     allMenuItems,
-                    topComments,
-                    errors,
-                    success
+                    topComments
+                    // errors,
+                    // success
                 })
         } catch (err) {
             console.log(err);
@@ -36,7 +36,7 @@ module.exports = (params) => {
         }
     });
 
-    router.get('/registration', redirecIfLoggedIn, async (request, response, next) => {
+    router.get('/registration', redirectIfLoggedIn, async (request, response, next) => {
         try {
             var registrationResult = false;
             if (request.query.success) {

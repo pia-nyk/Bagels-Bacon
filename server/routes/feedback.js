@@ -4,6 +4,30 @@ const { check, validationResult } = require('express-validator');
 
 const router = express.Router();
 
+function feedbackValidations() {
+    var validations = [
+        check('head')
+            .trim()
+            .isLength({ min: 3 })
+            .escape()
+            .withMessage('A title is required'),
+        check('message')
+            .trim()
+            .isLength({ min: 3 })
+            .escape()
+            .withMessage('A message is required')
+    ];
+    const namevalidation = check('name')
+        .trim()
+        .isLength({ min: 3 })
+        .escape()
+        .withMessage('A name is required');
+
+    if (request.user) {
+        validations.push(namevalidation);
+    }
+}
+
 module.exports = (params) => {
 
     const { feedbackService } = params;
@@ -12,42 +36,45 @@ module.exports = (params) => {
      * check the input for proper format
      */
     router.post('/',
-        [
-            check('name')
-                .trim()
-                .isLength({ min: 3 })
-                .escape()
-                .withMessage('A name is required'),
-            check('head')
-                .trim()
-                .isLength({ min: 3 })
-                .escape()
-                .withMessage('A title is required'),
-            check('message')
-                .trim()
-                .isLength({ min: 3 })
-                .escape()
-                .withMessage('A message is required')
-        ],
-        async (request, response) => {
-            //if checks arent satisfied, errors will be given 
-            const errors = validationResult(request);
-            console.log(errors);
-            if (!errors.isEmpty()) {
+        async (request, response, next) => {
+            try {
+                const errors = validationResult(request);
+                console.log(errors);
+                if (!errors.isEmpty()) {
+                    request.session.feedback = {
+                        errors: errors.array(),
+                    };
+                    if (request.user) {
+                        return response.redirect('/users/account#review-form');
+                    } else {
+                        return response.redirect('/explore');
+                    }
+                }
+
+                //if alls fine, then save the feedback form data to json
+                const { head, message } = request.body;
+                var name = null;
+                console.log(request.user);
+                if (request.user) {
+                    name = `${request.user.firstName} ${request.user.lastName}`;
+                } else {
+                    name = request.body.name;
+                }
+                await feedbackService.addEntry(name, head, message);
                 request.session.feedback = {
-                    errors: errors.array(),
+                    message: 'Thank you for the feedback!',
                 };
-                return response.redirect('/menu');
+
+                if (request.user) {
+                    return response.redirect('/users/account#review-form');
+                } else {
+                    return response.redirect('/explore');
+                }
+            } catch (err) {
+                console.log(err);
+                return next(err);
             }
-
-            //if alls fine, then save the feedback form data to json
-            const { name, head, message } = request.body;
-            await feedbackService.addEntry(name, head, message);
-            request.session.feedback = {
-                message: 'Thank you for the feedback!',
-            };
-
-            return response.redirect('/menu');
+            //if checks arent satisfied, errors will be given
         });
     return router;
 }

@@ -13,6 +13,11 @@ module.exports = (params) => {
             if (!request.user) {
                 return response.status(401).end();
             }
+            //get the errors & success msgs to be displayed in UI form
+            const errors = request.session.feedback.errors ? request.session.feedback.errors : false;
+            const success = request.session.feedback.message ? request.session.feedback.message : false;
+            request.session.feedback = {};
+
             const allMenuItems = await menuService.getMenuItems();
             const topComments = await feedbackService.getList();
             return response.render('layout',
@@ -21,6 +26,8 @@ module.exports = (params) => {
                     template: 'loggedinview',
                     allMenuItems,
                     topComments,
+                    errors,
+                    success
                 })
         } catch (err) {
             return next(err);
