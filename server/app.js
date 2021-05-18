@@ -18,11 +18,13 @@ const auth = require('./lib/auth');
  */
 const MenuService = require('./services/MenuService');
 const FeedbackService = require('./services/FeedbackService');
+const OrderService = require('./services/OrderService');
 
 module.exports = (config) => {
     const app = express();
     const menuService = new MenuService();
     const feedbackService = new FeedbackService();
+    const orderService = new OrderService();
 
     app.set('view engine', 'ejs');
     app.set('views', path.join(__dirname, '/views'));
@@ -52,7 +54,7 @@ module.exports = (config) => {
     //will be used to give signup/login option only if user isnt logged in
     app.use(auth.setUser);
 
-    app.use('/', routes({ menuService, feedbackService }));
+    app.use('/', routes({ menuService, feedbackService, orderService }));
 
     app.use((request, response, next) => {
         return next(createError(404, 'File not found'));

@@ -22,6 +22,16 @@ class MenuService {
             }
         }));
     }
+
+    async getMenuItemByName(itemname) {
+        return MenuModel.find({ title: itemname }, (item => {
+            try {
+                return item;
+            } catch (err) {
+                throw new Error(err.message);
+            }
+        }));
+    }
 }
 
 module.exports = MenuService;

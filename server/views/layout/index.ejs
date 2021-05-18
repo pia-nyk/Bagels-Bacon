@@ -32,7 +32,7 @@
         <%- include('../pages/partials/login', {registrationResult: locals.registrationResult ? registrationResult :
             false, registration: locals.registration ? registration : false}) %>
             <%} else if(template==='loggedinview' ) {%>
-                <%- include('../pages/partials/order') %>
+                <%- include('../pages/partials/order', {paymentStatus: locals.paymentStatus ? paymentStatus : false}) %>
                     <%}%>
 
 </body>
@@ -43,5 +43,16 @@
         document.getElementsByTagName('body')[0].onload = function () { displayForm(); toggleForm(registration); };
     </script>
     <% } %>
+
+<% if(template==='loggedinview' && locals.paymentStatus) {%>
+    <script>
+        var paymentStatus = '<%= paymentStatus %>';
+        if (paymentStatus === 'success') {
+            document.getElementsByTagName('body')[0].onload = function () { showSuccessPaymentBox(); };
+        } else if (paymentStatus === 'failure') {
+            document.getElementsByTagName('body')[0].onload = function () { showOrderSummaryBox(); };
+        }
+    </script>
+    <%} %>
 
 </html>

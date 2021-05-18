@@ -7,7 +7,7 @@ const FeedbackModel = require('../../models/FeedbackModel');
 
 module.exports = (params) => {
 
-    const { menuService, feedbackService } = params;
+    const { menuService, feedbackService, orderService } = params;
     router.get('/account', async (request, response, next) => {
         try {
             if (!request.user) {
@@ -20,15 +20,22 @@ module.exports = (params) => {
                 feedbackResult = 'failure';
             }
 
+            var paymentStatus = false;
+            if (request.query.payment) {
+                paymentStatus = request.query.payment;
+            }
+
             const allMenuItems = await menuService.getAllMenuItems();
             const topComments = await feedbackService.getAllFeedbacks();
+
             return response.render('layout',
                 {
                     pageTitle: `Welcome ${request.user.firstName} ${request.user.lastName}`,
                     template: 'loggedinview',
                     allMenuItems,
                     topComments,
-                    feedbackResult
+                    feedbackResult,
+                    paymentStatus
                 })
         } catch (err) {
             return next(err);

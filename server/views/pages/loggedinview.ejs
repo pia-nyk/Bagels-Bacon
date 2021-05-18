@@ -33,7 +33,7 @@
         </div>
     </div>
 </div>
-<section class="menu-section">
+<section class="menu-section" id="menu-section">
 
     <div class="container menu">
         <div class="menu-heading">
@@ -50,7 +50,7 @@
                             src="/images/<%=item.image%>" alt=<%=item.title%>
                         width="200px" height="200px"
                         id="menu-item-img-<%=index%>">
-                            <a href="#"
+                            <a href="/orders/additem/<%=item.title%>"
                                 onmouseover="showAddButton('menu-item-img-<%=index%>', 'menu-item-button-<%=index%>');"
                                 class="menu-item-button" id="menu-item-button-<%=index%>">Add</a>
                     </div>

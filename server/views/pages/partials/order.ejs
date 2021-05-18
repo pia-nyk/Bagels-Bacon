@@ -7,35 +7,22 @@
         <hr />
         <div class="order-summary">
             <h3>Your order summary</h2>
-                <ul class="order-list">
-                    <li class="order-items">
-                        <div class="order-item">
-                            <p>Item Name x 2</p>
-                            <h4>$4.99</h4>
-                        </div>
-                    </li>
-                    <li class="order-items">
-                        <div class="order-item">
-                            <p>Item Name x 2</p>
-                            <h4>$4.99</h4>
-                        </div>
-                    </li>
-                    <li class="order-items">
-                        <div class="order-item">
-                            <p>Item Name x 2</p>
-                            <h4>$4.99</h4>
-                        </div>
-                    </li>
+                <ul class="order-list" id="order-list">
                 </ul>
                 <hr />
+                <% if(locals.paymentStatus && paymentStatus==='failure' ) { %>
+                    <p style="color: red; text-align: center;">Error occured while payment, please try later</p>
+                    <%}%>
                 <div class="order-total">
                     <p> Total </p>
-                    <h4>$20.99</h4>
+                    <h4 id="grand-total">
+                        $0
+                    </h4>
                 </div>
         </div>
         <div class="payment-options">
             <a href="#" onclick="closeOrderSummaryBox();" class="payment-options-item">Cancel</a>
-            <a href="#" onclick="showSuccessPaymentBox();" class="payment-options-item">Payment</a>
+            <a href="/orders/payment" class="payment-options-item">Payment</a>
         </div>
     </div>
 </section>

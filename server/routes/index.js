@@ -3,6 +3,7 @@ const express = require('express');
 const exploreRoute = require('./explore');
 const feedbackRoute = require('./feedback');
 const userRoute = require('./users/');
+const orderRoute = require('./orders');
 
 const router = express.Router();
 
@@ -31,5 +32,6 @@ module.exports = (params) => {
     router.use('/explore', exploreRoute(params));
     router.use('/feedback', feedbackRoute(params));
     router.use('/users', userRoute(params));
+    router.use('/orders', orderRoute(params));
     return router;
 }
